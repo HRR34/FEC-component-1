@@ -1,18 +1,18 @@
-// const mongoose = require('mongoose');
-// const db = require('./index.js');
-// mongoose.Promise = global.Promise;
+const mongoose = require('mongoose');
+const db = require('./index.js');
+mongoose.Promise = global.Promise;
 
-// const reviewSchema = new mongoose.Schema({
-//   score: Number,
-//   course: Number,
-//   body: String,
-//   author: String,
-//   authorImgUrl: String,
-//   created: { type: Date, default: Date.now },
-//   wasHelpful: {type: Number, default: 0},
-//   reported: Number,
-// });
+const reviewSchema = new mongoose.Schema({
+  score: Number,
+  course: Number,
+  body: String,
+  author: String,
+  authorImgUrl: String,
+  created: { type: Date, default: Date.now },
+  wasHelpful: {type: Number, default: 0},
+  reported: Number,
+});
 
-// const Review = mongoose.model('Review', reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
-// module.exports = Review;
+module.exports = Review;
