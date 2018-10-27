@@ -1,0 +1,40 @@
+{
+  "name": "reviews-service-fec-max",
+  "version": "1.0.0",
+  "description": "reviews module for Udemy clone",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "build": "webpack-dev-server --entry ./client/index.js --output-filename ./public/bundle.js --mode=development",
+    "build:prod": "webpack-dev-server --entry ./client/index.js --output-filename ./public/bundle.js --mode=production",
+    "start": "nodemon server/index.js",
+    "dev-react": "webpack -d --watch",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxvolovikov/reviews-service-fec-max.git"
+  },
+  "author": "Max V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxvolovikov/reviews-service-fec-max/issues"
+  },
+  "homepage": "https://github.com/maxvolovikov/reviews-service-fec-max#readme",
+  "devDependencies": {
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest": "^23.6.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.3.7",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
