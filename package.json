@@ -4,6 +4,7 @@
   "description": "reviews module for Udemy clone",
   "main": ".eslintrc.js",
   "scripts": {
+    "seed.db": "node db/seed.js",
     "build": "webpack-dev-server --entry ./client/index.js --output-filename ./public/bundle.js --mode=development",
     "build:prod": "webpack-dev-server --entry ./client/index.js --output-filename ./public/bundle.js --mode=production",
     "start": "nodemon server/index.js",
