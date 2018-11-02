@@ -2,14 +2,14 @@
   "name": "reviews-service-fec-max",
   "version": "1.0.0",
   "description": "reviews module for Udemy clone",
-  "main": ".eslintrc.js",
+  "main": "public/bundle.js",
   "scripts": {
     "seed.db": "node db/seed.js",
-    "build": "webpack-dev-server --entry ./client/index.js --output-filename ./public/bundle.js --mode=development",
-    "build:prod": "webpack-dev-server --entry ./client/index.js --output-filename ./public/bundle.js --mode=production",
-    "start": "nodemon server/index.js",
-    "dev-react": "webpack -d --watch",
-    "test": "jest --watchAll"
+    "start:web": "webpack-dev-server --mode development --watch",
+    "dev:react": "webpack --mode development --watch",
+    "prod:react": "webpack --mode production",
+    "test": "jest --watchAll",
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/maxvolovikov/reviews-service-fec-max#readme",
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "faker": "^4.1.0",
@@ -33,6 +38,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-core": "^7.0.0-bridge.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
