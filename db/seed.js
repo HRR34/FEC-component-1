@@ -7,10 +7,10 @@ for (let c = 1; c <= 100; c++) {
   for (let i = 0; i < rand; i++) {
 
     let record = {};
-    let star = Math.floor(Math.random() * 4 + 1);
+    let star = Math.floor(Math.random() * 5 + 1);
     let helpful = Math.floor(Math.random() * 20) * (Math.random() < 0.1 ? -1 : 1);
     let reported = Math.random() < 0.01 ? true : false;
-
+    
     record.stars = star;
     record.course = c;
     record.body = faker.lorem.paragraph();
@@ -19,7 +19,7 @@ for (let c = 1; c <= 100; c++) {
     record.created = faker.date.past();
     record.wasHelpful = helpful;
     record.reported = reported;
-
+    console.log(record.stars)
     Reviews.create(record, (err, data)=>{
       if (err) {
         console.log(err, 'error popultaing the db');
