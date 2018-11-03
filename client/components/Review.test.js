@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 import Review from './Review.js'
 
 test('Review Component test should exist',()=>{

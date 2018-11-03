@@ -3,6 +3,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const reviewSchema = new mongoose.Schema({
+  stars: Number,
   score: Number,
   course: Number,
   body: String,

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import Reviews from './components/Reviews.js';
-import $ from 'jquery';
 import axios from 'axios';
 
 class App extends Component {
@@ -25,25 +23,6 @@ class App extends Component {
       })
     })
     .catch(err => console.log('Error occured while trying to get the reviews for this course:' , err))
-
-    //Ajax GET request works also
-    // $.ajax({
-    //   method: 'GET',
-    //   url: '/reviews',
-    //   data: {courseId: course_id},
-    //   success: (data)=>{
-
-    //     data = JSON.parse(data)
-    //     console.log(data)
-    //     this.setState({
-    //       reviews: data
-    //     })
-    //   },
-    //   error: (err)=>{
-    //     console.log('could not get the reviews form server', err)
-    //   },
-    //   contentType: "application/json",
-    // })
   }
 
   render() {
@@ -53,10 +32,5 @@ class App extends Component {
           </div>
       );
   }
-
-
 }
-
-
-
 export default App;
