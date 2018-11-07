@@ -9,7 +9,7 @@ import moment from 'moment';
     borderTop: '1px solid grey',
     paddingTop: '20px',
     paddingBottom: '20px',
-    maxWidth:'80%',
+    maxWidth:'100%',
     height: 'auto',
     flexWrap:'wrap',
   }
