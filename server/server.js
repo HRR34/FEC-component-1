@@ -12,9 +12,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../public'));
 
 //get the records of reviews from db (all for now)
-app.get('/reviews', function(req, res) {
-  //console.log(req.query)
-  let courseId = Number(req.query.courseId)
+app.get('/reviews/:focalCourse', function(req, res) {
+  console.log(req.params.focalCourse, 'params', new Date)
+  console.log(req.query, 'query', new Date)
+  let courseId = Number(req.params.focalCourse) || 1
   Reviews
     .find({course: courseId})
     .sort({'createdAt': -1})
@@ -29,8 +30,8 @@ app.get('/reviews', function(req, res) {
 
 //search results
 
-app.get('/reviews/search', function(req, res) {
-  let courseId = req.query.courseId
+app.get('/search/:focalCourse', function(req, res) {
+  let courseId = Number(req.params.focalCourse) || 1
   let search = req.query.search
 
   Reviews
@@ -40,7 +41,6 @@ app.get('/reviews/search', function(req, res) {
       if (error){
         console.log('ERROR, failed to read reviews from the DB', error)
       }
-        console.log(reviews, '++++++++++++++++++++++++')
         res.status(200).send(JSON.stringify(reviews))
     })
 });
