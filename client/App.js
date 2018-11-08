@@ -6,7 +6,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      courseId: 1,
+      courseId: 2,
       reviews: [],
       allReviews: [],
       showNumber: 5,
@@ -21,17 +21,23 @@ class App extends Component {
     })
     var courseId = this.state.courseId;
     var search = this.state.search;
+    var pathArray = window.location.pathname.split('/:')
+    var focalCourse = Number(pathArray[1]) || 1
+    console.log('x', focalCourse)
+
     axios
-      .get('/reviews/search',{
+      .get(`search/:${focalCourse}`,{
         params:{search: search, courseId: courseId},
         })
       .then(res => {
+        console.log('x', focalCourse)
         this.setState({
           allReviews: res.data,
         })
         let holder = []
         for (let i=0; i <this.state.showNumber && i<this.state.allReviews.length; i++){
           holder.push(this.state.allReviews[i])
+
         }
         this.setState({
           reviews: holder,
@@ -41,12 +47,13 @@ class App extends Component {
     
   }
 
-  componentDidMount(){
-    var course_id = this.state.courseId;
+  componentDidMount(){ 
+    var focalCourse = Number(window.location.pathname.replace(/\//, ''))
+    var courseId = this.state.courseId;
     var showNumber = this.state.showNumber;
     axios
-    .get('/reviews',{
-      params:{courseId: course_id, showNumber: showNumber },
+    .get(`reviews/:${focalCourse}`,{
+      params:{courseId: courseId, showNumber: showNumber },
       })
     .then(res => {
       this.setState({
