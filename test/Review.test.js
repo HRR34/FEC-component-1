@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Review from './Review.js'
+import Review from '../client/components/Review.js'
 
 test('Review Component test should exist',()=>{
     expect(true).toBeTruthy();

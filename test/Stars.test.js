@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount, render, configure} from 'enzyme';
-import Stars from './Stars.js';
+import Stars from '../client/components/Stars.js';
 import 'jest-dom/extend-expect';
 import Adapter from 'enzyme-adapter-react-16';
 import {cleanup, fireEvent, waiForElement} from 'react-testing-library';
