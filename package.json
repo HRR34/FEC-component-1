@@ -6,8 +6,8 @@
   "scripts": {
     "db:seed": "node db/seed.js",
     "start:web": "webpack-dev-server --mode development --watch",
-    "dev:react": "webpack --mode development --watch",
-    "prod:react": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "prod": "webpack --mode production",
     "test": "jest --watchAll --expand --verbose",
     "start": "nodemon server/server.js"
   },
@@ -42,6 +42,7 @@
     "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
