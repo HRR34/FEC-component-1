@@ -6,10 +6,12 @@ services:
     build: .
     ports: 
       - '8000:8000'
-    depends_on:
+    links:
       - mongo
+    environment: 
+      - MONGO_URI=mongodb://max:reviews7@ds151970.mlab.com:51970/reviews
   mongo: 
-    container_name: mongo
+    container_name: mongo-reviews
     image: mongo
     ports: 
       - '27017:27017'
