@@ -52,7 +52,7 @@ class App extends Component {
     var courseId = this.state.courseId;
     var showNumber = this.state.showNumber;
     axios
-    .get(`reviews/:${focalCourse}`,{
+    .get(`http://68.183.60.166/reviews/:${focalCourse}`,{
       params:{courseId: courseId, showNumber: showNumber },
       })
     .then(res => {

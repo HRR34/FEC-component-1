@@ -9,7 +9,7 @@
     "dev": "webpack --mode development --watch",
     "prod": "webpack --mode production",
     "test": "jest --watchAll --expand --verbose",
-    "start": "node server/server.js"
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
