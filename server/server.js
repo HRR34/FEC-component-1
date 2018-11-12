@@ -53,21 +53,21 @@ app.get('/reviews/:focalCourse', function(req, res) {
 
 //search results
 
-app.get('/search/:focalCourse', function(req, res) {
-  let courseId = Number(req.params.focalCourse) || 1
-  let search = req.query.search
+// app.get('/search/:focalCourse', function(req, res) {
+//   let courseId = Number(req.params.focalCourse) || 1
+//   let search = req.query.search
 
-  Reviews
-    .find({course: courseId, body: new RegExp(search, 'i') })
-    .sort({'createdAt': -1})
-    .exec(function(error, reviews){
-      if (error){
-        console.log('ERROR, failed to read reviews from the DB', error)
-      }
-        res.status(200).send(JSON.stringify(reviews))
-    })
-});
+//   Reviews
+//     .find({course: courseId, body: new RegExp(search, 'i') })
+//     .sort({'createdAt': -1})
+//     .exec(function(error, reviews){
+//       if (error){
+//         console.log('ERROR, failed to read reviews from the DB', error)
+//       }
+//         res.status(200).send(JSON.stringify(reviews))
+//     })
+// });
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`listening on port ${PORT}`);
+// });
